@@ -1,5 +1,5 @@
 buildscript {
-    ext.kotlin_version = '1.2.51'
+    ext.kotlin_version = '1.2.60'
 
     repositories {
         mavenCentral()
@@ -10,26 +10,17 @@ buildscript {
     }
 }
 
-// Apply the java plugin to add support for Java
 apply plugin: 'java'
 apply plugin: "kotlin"
 
-// In this section you declare where to find the dependencies of your project
 repositories {
     jcenter()
     maven { url "https://dl.bintray.com/kotlin/ktor" }
 }
 
-// In this section you declare the dependencies for your production and test code
 dependencies {
     compile "org.jsoup:jsoup:1.11.3"
     compile 'io.ktor:ktor:0.9.3'
     compile "io.ktor:ktor-server-netty:0.9.3"
-    // The production code uses the SLF4J logging API at compile time
-
-    // Declare the dependency for your favourite test framework you want to use in your tests.
-    // TestNG is also supported by the Gradle Test task. Just change the
-    // testCompile dependency to testCompile 'org.testng:testng:6.8.1' and add
-    // 'test.useTestNG()' to your build script.
 }
 
