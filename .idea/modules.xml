@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/foodfetcher.iml" filepath="$PROJECT_DIR$/foodfetcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/foodfetcher.iml" filepath="$PROJECT_DIR$/foodfetcher.iml" group="foodfetcher" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/foodfetcher_main.iml" filepath="$PROJECT_DIR$/.idea/modules/foodfetcher_main.iml" group="foodfetcher" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/foodfetcher_test.iml" filepath="$PROJECT_DIR$/.idea/modules/foodfetcher_test.iml" group="foodfetcher" />
     </modules>
