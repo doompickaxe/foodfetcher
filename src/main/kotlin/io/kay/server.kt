@@ -1,3 +1,5 @@
+package io.kay
+
 import io.ktor.application.call
 import io.ktor.http.ContentType
 import io.ktor.response.respondText
@@ -7,10 +9,10 @@ import io.ktor.server.engine.embeddedServer
 import io.ktor.server.netty.Netty
 
 fun main(args: Array<String>) {
-  embeddedServer(Netty, 8080) {
+  embeddedServer(Netty, Integer.valueOf(System.getenv("PORT") ?: "8080")) {
     routing {
       get("/") {
-        call.respondText(assemble(), ContentType.Text.Html)
+        call.respondText(Fetcher().assemble(), ContentType.Text.Html)
       }
     }
   }.start(wait = true)

@@ -10,6 +10,10 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.heroku.sdk.heroku-gradle" version "1.0.4"
+}
+
 apply plugin: 'java'
 apply plugin: "kotlin"
 
@@ -24,3 +28,26 @@ dependencies {
     compile "io.ktor:ktor-server-netty:1.2.1"
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.kay.ServerKt'
+    }
+
+    from {
+        (configurations.compile).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from(configurations.compile)
+}
+
+
+task stage(dependsOn: ['build', 'clean'])
+
+build.mustRunAfter clean
+
+stage.dependsOn(copyToLib)
